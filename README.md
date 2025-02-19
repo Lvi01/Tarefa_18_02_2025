@@ -7,7 +7,7 @@
 **18 de fevereiro de 2025**
 
 ## Link de entrega do vídeo
-Link: a gravar
+Link: https://youtube.com/shorts/Sr-U8rkz5bg?feature=share
 
 ## Descrição do Projeto
 Este projeto visa implementar um sistema embarcado utilizando a placa **BitDogLab** com o microcontrolador **RP2040**. O sistema utiliza um **joystick analógico** para controlar a intensidade de **LEDs RGB** e exibir sua posição em um **display OLED SSD1306**.
