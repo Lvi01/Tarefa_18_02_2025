@@ -7,22 +7,23 @@
 #include "pico/stdlib.h" // Inclusão da biblioteca de funções padrão do Pico
 #include "hardware/adc.h" // Inclusão da biblioteca de funções do ADC
 #include "hardware/i2c.h" // Inclusão da biblioteca de funções do I2C
-#include "inc/ssd1306.h" // Inclusão da biblioteca do display OLED
-#include "inc/font.h" // Inclusão da biblioteca de fontes
 #include "hardware/pwm.h" // Inclusão da biblioteca de funções do PWM
 #include "hardware/gpio.h" // Inclusão da biblioteca de funções do GPIO
+#include "inc/font.h" // Inclusão da biblioteca de fontes
+#include "inc/ssd1306.h" // Inclusão da biblioteca do display OLED
 
-// Definições de pinos e periféricos
+// Definições da comunicação I2C
+#define I2C_ENDERECO 0x3C // Endereço do display OLED
 #define I2C_PORT i2c1 // Barramento I2C utilizado
 #define I2C_SDA 14 // Pino SDA do barramento I2C
 #define I2C_SCL 15 // Pino SCL do barramento I2C
-#define I2C_ENDERECO 0x3C // Endereço do display OLED
 
-#define LED_VERDE 11 // Pino do LED verde
-#define LED_AZUL 12 // Pino do LED azul
+// Definições de pinos e periféricos
 #define LED_VERMELHO 13 // Pino do LED vermelho
-#define JOYSTICK_X 26 // Pino do eixo X do joystick
+#define LED_AZUL 12 // Pino do LED azul
+#define LED_VERDE 11 // Pino do LED verde
 #define JOYSTICK_Y 27 // Pino do eixo Y do joystick
+#define JOYSTICK_X 26 // Pino do eixo X do joystick
 #define BOTAO_JOY 22 // Pino do botão do joystick
 #define BOTAO_A 5 // Pino do botão A
 
@@ -91,7 +92,7 @@ int main() {
         ssd1306_send_data(&display); // Atualiza o display
         
         definir_padrao_led(x_val, y_val); // Define o padrão dos LEDs RGB
-        
+
         sleep_ms(50); // Evita que o display pisque
     }
     return 0;
