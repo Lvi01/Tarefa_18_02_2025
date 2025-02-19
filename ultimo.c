@@ -86,8 +86,8 @@ int main() {
         adc_select_input(1); // Seleciona o canal 1 do ADC
         uint16_t y_val = adc_read(); // Lê os valores do eixo Y do joystick
         
-        uint8_t x_pos = (x_val * 112) / 4095; // Ajusta a posição do quadrado no eixo X
-        uint8_t y_pos = (y_val * 56) / 4095; // Ajusta a posição do quadrado no eixo Y
+        uint8_t x_pos = (y_val * 112) / 4095; // Ajusta a posição do quadrado no eixo X
+        uint8_t y_pos = (x_val * 56) / 4095; // Ajusta a posição do quadrado no eixo Y
         ssd1306_rect(&display, y_pos, x_pos, 10, 10, true, true); // Desenha o quadrado no display
         ssd1306_send_data(&display); // Atualiza o display
         
